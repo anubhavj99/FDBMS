@@ -2,6 +2,8 @@ if __name__ == '__main__':
 	while True :
 		inputFile = open('inputfile', 'r');
 		x = inputFile.read()
+		if len(x) % 35 !=0:
+			raise Exception('File unexpected');
 		x = [x[i:i+35] for i in range(0,len(x),35)]
 		fullX = []
 		for data in x : 
