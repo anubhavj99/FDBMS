@@ -34,35 +34,37 @@ def readInputFile(inputFile, dataTypes):
 			elif dataTypes[j][1] == 'P':
 				fullX[i][j] = float(fullX[i][j]);	
 	
-	print(fullX);
+	# print(fullX);
 	return fullX;
 				
 
 
 # def putFromInputToDataFile(inputFile, dataFile, dataTypes):
 
-
+import timeit;
 if __name__ == '__main__':
-	while True:
-		metaFile = open('metadata','r');
-		dataTypes = getTableMetaData(metaFile);
-		dataFile = open('datafile','r+');
-		inputFile = open('inputfile', 'r');
-		dataBase = readInputFile(inputFile, dataTypes);
-		col = input();
-		colPos = -1;
-		for i in range(len(dataTypes)):
-			if dataTypes[i][0] == col:
-				colPos = i;
-				break;
-		if colPos == -1:
-			raise Exception('Column not present');
-		sumCol = 0;
-		if dataTypes[colPos][1] == 'I' or dataTypes[colPos][1] == 'P':
-			for dtbs in dataBase:
-				sumCol += dtbs[colPos];
-			print(sumCol);
-		else:
-			raise Exception('Not a number');
-		metaFile.close();
-		dataFile.close();
+	start = timeit.default_timer();
+	metaFile = open('metadata','r');
+	dataTypes = getTableMetaData(metaFile);
+	dataFile = open('datafile','r+');
+	inputFile = open('inputfile', 'r');
+	dataBase = readInputFile(inputFile, dataTypes);
+	col = 'ID';
+	colPos = -1;
+	for i in range(len(dataTypes)):
+		if dataTypes[i][0] == col:
+			colPos = i;
+			break;
+	if colPos == -1:
+		raise Exception('Column not present');
+	sumCol = 0;
+	if dataTypes[colPos][1] == 'I' or dataTypes[colPos][1] == 'P':
+		for dtbs in dataBase:
+			sumCol += dtbs[colPos];
+		print(sumCol);
+	else:
+		raise Exception('Not a number');
+	metaFile.close();
+	dataFile.close();
+	stop = timeit.default_timer();
+	print(stop-start);
