@@ -11,7 +11,7 @@ if __name__ == '__main__':
 		temp.append(data[5:25].strip())
 		temp.append(float(data[25:35]))
 		fullX.append(temp)
-	# print(fullX)	
+	print(fullX)	
 	col = 'ID';
 	colPos = -1;
 	if col == 'ID' :

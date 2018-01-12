@@ -34,7 +34,7 @@ def readInputFile(inputFile, dataTypes):
 			elif dataTypes[j][1] == 'P':
 				fullX[i][j] = float(fullX[i][j]);	
 	
-	# print(fullX);
+	print(fullX);
 	return fullX;
 				
 
