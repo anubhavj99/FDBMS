@@ -47,8 +47,25 @@ if __name__ == '__main__':
 	dataTypes = getTableMetaData(metaFile);
 	dataFile = open('datafile','r+');
 	inputFile = open('inputfile', 'r');
-
 	dataBase = readInputFile(inputFile, dataTypes);
-	
+	while True:
+		col = input();
+		colPos = -1;
+		for i in range(len(dataTypes)):
+			if dataTypes[i][0] == col:
+				colPos = i;
+				break;
+		if colPos == -1:
+			raise Exception('Column not present');
+		sumCol = 0;
+		if dataTypes[colPos][1] == 'I' or dataTypes[colPos][1] == 'P':
+			for dtbs in dataBase:
+				sumCol += dtbs[colPos];
+			print(sumCol);
+		else:
+			raise Exception('Not a number');
+
+
+
 	metaFile.close();
 	dataFile.close();
