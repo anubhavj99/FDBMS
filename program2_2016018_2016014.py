@@ -44,7 +44,7 @@ def readInputFile(inputFile, dataTypes):
 import timeit;
 if __name__ == '__main__':
 	start = timeit.default_timer();
-	metaFile = open('metadata','r');
+	metaFile = open('metadata_2016018_2016014.txt','r');
 	dataTypes = getTableMetaData(metaFile);
 	dataFile = open('datafile','r+');
 	inputFile = open('inputfile', 'r');
