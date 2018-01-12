@@ -43,12 +43,12 @@ def readInputFile(inputFile, dataTypes):
 
 
 if __name__ == '__main__':
-	metaFile = open('metadata','r');
-	dataTypes = getTableMetaData(metaFile);
-	dataFile = open('datafile','r+');
-	inputFile = open('inputfile', 'r');
-	dataBase = readInputFile(inputFile, dataTypes);
 	while True:
+		metaFile = open('metadata','r');
+		dataTypes = getTableMetaData(metaFile);
+		dataFile = open('datafile','r+');
+		inputFile = open('inputfile', 'r');
+		dataBase = readInputFile(inputFile, dataTypes);
 		col = input();
 		colPos = -1;
 		for i in range(len(dataTypes)):
@@ -64,8 +64,5 @@ if __name__ == '__main__':
 			print(sumCol);
 		else:
 			raise Exception('Not a number');
-
-
-
-	metaFile.close();
-	dataFile.close();
+		metaFile.close();
+		dataFile.close();
