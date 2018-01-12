@@ -6,3 +6,7 @@ Time taken in the first case: 0.03290370099421125 seconds.
 Time taken in the second case: 0.0683168219984509 seconds.
 
 The following time was generated using a sample test case. The case has been attached in the submission file.
+
+Done in group of 2.
+1. Arshdeep Singh Chugh - 2016018
+2. Anubhav Jaiswal - 2016014
